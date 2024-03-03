@@ -1,4 +1,4 @@
-package leetcode31_40.firstMissingPositive;
+package leetcode41_50.firstMissingPositive;
 
 public class Solution {
     public static int firstMissingPositive(int[] nums) {
@@ -9,10 +9,11 @@ public class Solution {
             }
         }
 
+        // đánh dấu số num - 1 đã xuất hiện bằng cách đổi dấu của số num - 1 thành số âm
         for (int i = 0; i < n; i++) {
             int num = Math.abs(nums[i]);
             if (num <= n) {
-                nums[num - 1] = -Math.abs(nums[num - 1]);
+                nums[num - 1] = -Math.abs(nums[num - 1]); // đánh dấu số num - 1 đã xuất hiện
             }
         }
 
@@ -26,7 +27,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {7,8,9,11,12};
+        int[] nums = {1,3,4,5};
         System.out.println(firstMissingPositive(nums));
     }
 }

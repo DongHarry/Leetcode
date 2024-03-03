@@ -1,2 +1,27 @@
-package leetcode11_20.validParentheses;public class Solution {
+package leetcode11_20.validParentheses;
+
+import java.util.Stack;
+
+public class Solution {
+    public static boolean isValid(String s) {
+        if (s.length() % 2 != 0) return false;
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c =='{') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty()) return false;
+                char top = stack.pop();
+                if (c == ')' && top != '(') return false;
+                if (c == ']' && top != '[') return false;
+                if (c == '}' && top != '{') return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String s = "{}([])";
+        System.out.println(isValid(s));
+    }
 }
