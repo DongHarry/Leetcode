@@ -3,7 +3,7 @@ package leetcode1_10.addToNumber;
 public class Solution {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
-        ListNode curr = dummyHead; // tạo con trỏ trỏ đến dummyHead
+        ListNode curr = dummyHead;
         int carry = 0;
 
         while (l1 != null || l2 != null) {
