@@ -5,24 +5,19 @@ import java.util.Stack;
 public class Solution {
     public static int longestValidParentheses(String s) {
         Stack<Integer> stack = new Stack<>();
-        stack.push(-1); // khởi tạo stack với giá trị giả -1
-        int max = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
+        for(int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == '(') {
                 stack.push(i);
             } else {
-                stack.pop();
-                if (stack.isEmpty()) {
-                    stack.push(i);
+                if(!stack.isEmpty() && s.charAt(stack.peek()) == '(') {
+                    stack.pop();
                 } else {
-                    // tính chiều dài ngoặc đúng
-                    max = Math.max(max, i - stack.peek()); // i - stack.peek() là độ dài của chuỗi con hợp lệ hiện tại
+                    stack.push(i);
                 }
             }
         }
-
-        return max;
+        return s.length() - stack.size();
     }
 
     public static void main(String[] args) {

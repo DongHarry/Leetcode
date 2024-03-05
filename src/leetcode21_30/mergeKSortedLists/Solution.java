@@ -18,8 +18,8 @@ public class Solution {
         while (!queue.isEmpty()) {
             ListNode node = queue.poll(); // lấy node nhỏ nhất từ queue
             current.next = node; // thêm node nhỏ nhất vào danh sách kết quả
-            current = current.next; // cập nhật current
-            if (node.next != null) { // nếu node có phần tử tiếp theo
+            current = current.next;
+            if (node.next != null) {
                 queue.add(node.next); // thêm phần tử tiếp theo vào queue
             }
         }
