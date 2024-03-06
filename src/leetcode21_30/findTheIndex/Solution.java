@@ -6,7 +6,7 @@ public class Solution {
         if (haystack.length() < needle.length())  return -1;
 
         for (int i = 0; i < haystack.length() - needle.length() + 1; i++) {
-            if (haystack.substring(i, i + needle.length()).equals(needle)) { // substring(i, j) trả về chuỗi con từ i đến j - 1
+            if (haystack.substring(i, i + needle.length()).equals(needle)) {
                 return i;
             }
         }

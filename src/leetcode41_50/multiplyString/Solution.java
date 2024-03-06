@@ -7,10 +7,10 @@ public class Solution {
 
         for (int i = m - 1; i >= 0; i--) {
             for (int j = n - 1; j >= 0; j--) {
-                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0'); // trừ '0' để chuyển từ char sang int
-                int sum = mul + pos[i + j + 1]; // cộng với pos[i + j + 1] để cộng số hàng đơn vị
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int sum = mul + pos[i + j + 1];
 
-                pos[i + j] += sum / 10; // cộng số hàng chục
+                pos[i + j] += sum / 10;
                 pos[i + j + 1] = sum % 10; // cộng số hàng đơn vị
             }
         }
